@@ -1,7 +1,8 @@
-name: black-action
+name: Lint (black 2)
 on: [push, pull_request]
 jobs:
   linter_name:
+    permissions: write-all
     name: runner / black
     runs-on: ubuntu-latest
     steps:
