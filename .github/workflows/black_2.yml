@@ -1,17 +1,18 @@
 name: Lint (black 2)
 on: [push, pull_request]
+
 jobs:
   linter_name:
     permissions: write-all
     name: runner / black
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Check files using the black formatter
-        uses: datadog/action-py-black-formatter@v2.1
-        id: action_black
+      - uses: actions/checkout@v3
+      - name: Install black formatter
+        run: pip install black
+      - name: Format codes
+        run: black .
       - name: Annotate diff changes using reviewdog
-        if: steps.action_black.outputs.is_formatted == 'true'
         uses: reviewdog/action-suggester@v1
         with:
-          tool_name: blackfmt
+          tool_name: black
