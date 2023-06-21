@@ -7,7 +7,7 @@ on:
 
 jobs:
   flake8_py3:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
