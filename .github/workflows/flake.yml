@@ -1,15 +1,15 @@
-name: flake with annotations
-
-on:
-  push:
-    paths:
-      - '*.py'
+on: [pull_request]
 
 jobs:
-  flake8_py3:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Check by flake
-        uses: TrueBrain/actions-flake8@v2
+      - uses: actions/checkout@v3
+      - uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
+        with:
+          # The GitHub API token to create reviews with
+          token: ${{ secrets.MY_TOKEN }}
+          # Fail if "new" violations detected or "any", default "new"
+          failIf: new
+          # Additional arguments to pass to flake8, default "." (current directory)
+          args: "--ignore=E121,E123 ."
