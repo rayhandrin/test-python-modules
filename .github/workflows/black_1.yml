@@ -1,5 +1,4 @@
-name: Lint
-
+name: Black formatter 1
 on: [push, pull_request]
 
 jobs:
