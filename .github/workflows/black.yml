@@ -1,4 +1,4 @@
-name: Black formatter 2
+name: Black - Format code
 on: [push, pull_request]
 
 jobs:
