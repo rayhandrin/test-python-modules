@@ -2,7 +2,7 @@ name: Bandit - Security check
 on: [push, pull_request]
 
 jobs:
-  check_with_bandit:
+  bandit:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
