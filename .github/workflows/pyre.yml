@@ -11,11 +11,10 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - name: Repository checkout
+        uses: actions/checkout@v3
       - name: Run Pyre Action
-        # update with the desired version of the action (e.g. `facebook/pyre-action@v0.0.1`)
         uses: facebook/pyre-action@v0.0.1
         with:
-            repo-directory: './'
-            requirements-path: 'requirements.txt'
+          repo-directory: './'
+          requirements-path: 'requirements.txt'
