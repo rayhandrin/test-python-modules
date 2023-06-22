@@ -2,7 +2,7 @@ name: Black - Format code
 on: [push, pull_request]
 
 jobs:
-  linter_name:
+  check_using_black:
     permissions: write-all
     name: runner / black
     runs-on: ubuntu-latest
