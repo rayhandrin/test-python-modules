@@ -9,11 +9,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Format codes
-        uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "."
       - name: Annotate diff changes using reviewdog
         uses: reviewdog/action-suggester@v1
         with:
