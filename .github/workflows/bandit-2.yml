@@ -1,5 +1,5 @@
 name: Bandit 2 - Security check
-on: push
+on: [push, pull_request]
 
 jobs:
   build:
@@ -11,6 +11,4 @@ jobs:
       with: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         path: "."
-          level: low
-          confidence: low
-          exit_zero: true
+        exit_zero: true
