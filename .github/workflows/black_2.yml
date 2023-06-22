@@ -12,7 +12,7 @@ jobs:
       - name: Installing black formatter
         run: pip install black
       - name: Check using black
-        run: black . --check --verbose
+        run: black .
       - name: Annotate diff changes using reviewdog
         uses: reviewdog/action-suggester@v1
         with:
