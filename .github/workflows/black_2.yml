@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Installing black formatter
+        uses: pip install black
+      - name: Check using black
+        uses: black . --check --verbose
       - name: Annotate diff changes using reviewdog
         uses: reviewdog/action-suggester@v1
         with:
