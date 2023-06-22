@@ -1,4 +1,4 @@
-name: Bandit 2 - Security check
+name: Bandit - Security check
 on: [push, pull_request]
 
 jobs:
