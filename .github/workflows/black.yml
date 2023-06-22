@@ -2,9 +2,8 @@ name: Black - Format code
 on: [push, pull_request]
 
 jobs:
-  check_using_black:
+  black:
     permissions: write-all
-    name: runner / black
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
