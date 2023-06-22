@@ -1,5 +1,4 @@
-name: Pyre
-
+name: Pyre - Secuity type-safe check
 on:
   push:
     branches: [main]
